@@ -1,10 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:returnpostcustomer/authentication/passwords/forgotpassword.dart';
 import 'package:returnpostcustomer/authentication/signuppage.dart';
 import 'package:returnpostcustomer/screens/mainscreen.dart';
 
+
 class Signinpage extends StatefulWidget {
-  const Signinpage({ Key? key }) : super(key: key);
+  const Signinpage({Key? key}) : super(key: key);
 
   @override
   _SigninpageState createState() => _SigninpageState();
@@ -25,18 +28,16 @@ class _SigninpageState extends State<Signinpage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  width: 237,
+                  height: 88,
+                  margin: EdgeInsets.only(left: 30,right: 30,top: 28),
                   child: Text(
-                    'Welcome\nBack',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 36,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ),
+                    'Welcome\nback',
+                    style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 36,fontStyle: FontStyle.normal),
+                ),),
                 Container(
                     height: 60,
-                    margin: EdgeInsets.symmetric(horizontal: 30),
+                    margin: EdgeInsets.only(left: 30,right: 30,top: 30),
 
                     //  padding: const EdgeInsets.all(3.0),
                     decoration: BoxDecoration(
@@ -48,21 +49,19 @@ class _SigninpageState extends State<Signinpage> {
                     child: TextFormField(
                       //  textAlign: TextAlign.start,
                       decoration: InputDecoration(
-                        hintText: ' Phone Number',
+                        
+                        hintText: ' Phone number',
                         contentPadding: EdgeInsets.only(top: 10, left: 20),
                         border: InputBorder.none,
-                        fillColor: Colors.white,
-                        hintStyle: TextStyle(
-                          color: Color(0xff8D8989), // <-- Change this
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
+                     
+                        
+                        labelStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                        hintStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Color(0xff8D8989),fontSize: 12,fontStyle: FontStyle.normal),
                       ),
                     )),
                 Container(
                     height: 60,
-                    margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    margin: EdgeInsets.only(left: 30,right: 30,top: 28),
 
                     //  padding: const EdgeInsets.all(3.0),
                     decoration: BoxDecoration(
@@ -76,19 +75,21 @@ class _SigninpageState extends State<Signinpage> {
                       //  textAlign: TextAlign.start,
                       decoration: InputDecoration(
                         suffixIcon: Padding(
-                          padding: EdgeInsets.only(top: 15, right: 20),
+                          padding: EdgeInsets.only(top: 13, right: 20),
                           child: Icon(Icons.visibility_off,color: Color(0xff8D8989),)
                         ),
                         hintText: 'Password',
                         contentPadding: EdgeInsets.only(top: 20, left: 20),
                         border: InputBorder.none,
                         fillColor: Colors.white,
-                        hintStyle: TextStyle(
-                          color: Color(0xff8D8989), // <-- Change this
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
+                        hintStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Color(0xff8D8989),fontSize: 12,fontStyle: FontStyle.normal),
+                        // hintStyle: TextStyle(
+                          
+                        //   color: Color(0xff8D8989), // <-- Change this
+                        //   fontSize: 12,
+                        //   fontWeight: FontWeight.w600,
+                        //   fontStyle: FontStyle.normal,
+                        // ),
                       ),
                     )),
                 Container(
@@ -101,9 +102,9 @@ class _SigninpageState extends State<Signinpage> {
                                   builder: (xxx) => ForgotPassword()));
                         },
                         child: Text(
-                          'Forgot Password',
-                          style: TextStyle(color: Color(0xff8D8989)),
-                        )))
+                          'Forgot your password?',
+                          style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Color(0xff8D8989),fontSize: 12,fontStyle: FontStyle.normal)),
+                        ))
               ],
             ),
           ),
@@ -113,20 +114,22 @@ class _SigninpageState extends State<Signinpage> {
                 primary: Color(0xffEB5757),
                 minimumSize: Size(310, 60),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(23)),
+                    borderRadius: BorderRadius.circular(24)),
               ),
               onPressed: () {
                  Navigator.push(context,
                    MaterialPageRoute(builder: (context) => MainScreen()));
               },
               child: Text(
+                
                 'Sign In',
-                style: TextStyle(fontSize: 20),
+                style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 15,fontStyle: FontStyle.normal),
+
               ),
             ),
           ),
           Container(
-              margin: EdgeInsets.symmetric(vertical: 10),
+              margin: EdgeInsets.symmetric(vertical: 15),
               child: Center(
                   child: TextButton(
                       onPressed: () {
@@ -137,7 +140,8 @@ class _SigninpageState extends State<Signinpage> {
                       },
                       child: Text(
                         'Sign Up',
-                        style: TextStyle(color: Color(0xffEB5757)),
+                     style:    GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Color(0xffEB5757),fontSize: 15,fontStyle: FontStyle.normal),
+                       
                       )))),
         ],
       ),

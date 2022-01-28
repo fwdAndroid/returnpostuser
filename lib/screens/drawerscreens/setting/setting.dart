@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:returnpostcustomer/screens/drawerscreens/setting/currencyselection.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:returnpostcustomer/screens/drawerscreens/setting/countrycurrencyselecion.dart';
 import 'package:returnpostcustomer/screens/drawerscreens/setting/languageselection.dart';
 
 class Setting extends StatefulWidget {
@@ -10,114 +11,100 @@ class Setting extends StatefulWidget {
 }
 
 class _SettingState extends State<Setting> {
+    bool _lights = true;
   @override
   Widget build(BuildContext context) {
-      bool _lights = true;
-
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Image.asset('assets/back.png')),
-        ),
-      ),
-      extendBody: true,
-      backgroundColor: Color(0xff404040),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 237,
-            height: 88,
-            margin: EdgeInsets.symmetric(horizontal: 25),
-            child: Text(
-              'Settings',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 36,
-                  fontWeight: FontWeight.w600),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 20),
-            height: 60,
-            width: 310,
-            //  padding: const EdgeInsets.all(3.0),
-            decoration: BoxDecoration(
-              color: Color(0xff535353),
-              borderRadius: new BorderRadius.circular(15),
-            ),
-            // border: Border.all(color: Colors.grey,width: 0.5)
-
-            child: ListTile(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (builder) => LanguageSelection()));
-              },
-              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-              shape: CircleBorder(),
-              leading: Text(
-                'Language',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600),
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: Color(0xff404040),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 10, bottom: 20),
+                child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      'assets/back.png',
+                      height: 50,
+                      width: 50,
+                    )),
               ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xff8D8989),
-              ),
-            ),
-          ),
+            Container(width: 200,
+                          margin: EdgeInsets.only(top: 20,left:23),
+                          child: Text('Settings',
+                              style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 36,fontStyle: FontStyle.normal,height: 1,),),
+                        ),
+                Container(
+                         margin: EdgeInsets.only(top:20,left: 23,right:23),
+                             padding: EdgeInsets.only(left: 10),
+                          height: 60,
+                          width: 380,
+                          //  padding: const EdgeInsets.all(3.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xff535353),
+                            borderRadius: new BorderRadius.circular(20),
+                          ),
+                          // border: Border.all(color: Colors.grey,width: 0.5)
 
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 20,top: 15),
-            height: 60,
-            width: 310,
-            //  padding: const EdgeInsets.all(3.0),
-            decoration: BoxDecoration(
-              color: Color(0xff535353),
-              borderRadius: new BorderRadius.circular(15),
-            ),
-            // border: Border.all(color: Colors.grey,width: 0.5)
+                          child: ListTile(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => LanguageSelection()));
+                            },
+                            contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                            shape: CircleBorder(),
+                            leading: Text(
+                              'Language',
+                              style :GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xff8D8989),
+                            ),
+                          ),
+                        ),
+              Container(
+                          margin: EdgeInsets.only(top:20,left: 23,right:23),
+                             padding: EdgeInsets.only(left: 10),
+                          height: 60,
+                          width: 350,
+                          //  padding: const EdgeInsets.all(3.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xff535353),
+                            borderRadius: new BorderRadius.circular(20),
+                          ),
+                          // border: Border.all(color: Colors.grey,width: 0.5)
 
-            child: ListTile(
-              onTap: (){
-               Navigator.push(context, MaterialPageRoute(builder: (builder) => CurrenySelection()));
+                          child: ListTile(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => CountryCurrencySelecion()));
+                            },
+                            contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                            shape: CircleBorder(),
+                            leading: Text(
+                              'Country and currency',
+                              style :GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xff8D8989),
+                            ),
+                          ),
+                        ),
+            Container(
+                 margin: EdgeInsets.only(top:20,left: 20,right:20),
+                             padding: EdgeInsets.only(left: 10),
+                  width: MediaQuery.of(context).size.width,
+                  //  padding: const EdgeInsets.all(3.0),
+                  decoration: BoxDecoration(
+                    color: Color(0xff535353),
+                    borderRadius: new BorderRadius.circular(20),
+                  ),
+                  // border: Border.all(color: Colors.grey,width: 0.5)
 
-              },
-              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-              shape: CircleBorder(),
-              leading: Text(
-                'Country and currency',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600),
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xff8D8989),
-              ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 20,top: 15),
-            height: 60,
-            width: 310,
-            //  padding: const EdgeInsets.all(3.0),
-            decoration: BoxDecoration(
-              color: Color(0xff535353),
-              borderRadius: new BorderRadius.circular(15),
-            ),
-            // border: Border.all(color: Colors.grey,width: 0.5)
-
-            child: SwitchListTile(
+                  child:SwitchListTile(
               selectedTileColor: Color(0xffEB5757),
               activeColor: Color(0xffEB5757),
               activeTrackColor:  Color(0xffEB5757),
@@ -132,9 +119,11 @@ class _SettingState extends State<Setting> {
       },
      
     )
-          ),
-        ],
-      ),
+              
+              ),
+           
+            ],
+          )),
     );
   }
 }

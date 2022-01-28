@@ -187,8 +187,75 @@ class _MyDrawerState extends State<MyDrawer> {
                   color: Colors.white),
             ),
             onTap: () {
-              // Update the state of the app.
-              // ...
+                 
+    showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(20.0))),
+          backgroundColor: Color(0xffEB5757),
+          title: Center(
+              child: Container(
+                  width: 188,
+                  height: 58,
+                  child: const Text(
+                    'Log out',
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ))),
+          content: Container(
+              height: 150,
+              child: Column(children: [
+                Container(
+                    margin: EdgeInsets.only(
+                      top: 10,
+                    ),
+                    child: Text(
+                      
+                      'Are you sure you want to log out\n of your account?',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
+                    )),
+                Container(
+                  margin: EdgeInsets.only(top: 30),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 10),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white,
+                            fixedSize: Size(120, 60),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(23)),
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                              'Log Out',
+                              style: TextStyle(fontSize: 15, color: Colors.red),
+                            ),
+                          ),
+                        
+                      ),
+                      SizedBox(width: 10,),
+                      Container(
+                         margin: EdgeInsets.only(top: 10),
+                        child:ElevatedButton(onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xffEB5757),
+                      fixedSize: Size(120, 60),
+                       shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(23)),
+                      side: BorderSide(width: 0.7, color: Colors.white,)),
+                    child: Text('Cancel'))),
+                      
+                    ],
+                  ),
+                ),
+              ]))),
+    );
             },
           ),
         ],

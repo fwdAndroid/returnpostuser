@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CountrySelecion extends StatefulWidget {
   const CountrySelecion({ Key? key }) : super(key: key);
@@ -36,13 +37,12 @@ class _CountrySelecionState extends State<CountrySelecion> {
             margin: EdgeInsets.symmetric(horizontal: 25,vertical: 20),
             child: Text(
               'Country',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 36,
-                  fontWeight: FontWeight.w600),
+              style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 24,fontStyle: FontStyle.normal),
             ),
           ),
           Container(
+                      height: 60,
+
              margin: EdgeInsets.only(left: 20,right: 20,bottom: 10),
              decoration: BoxDecoration(
               color: Color(0xffEB5757),
@@ -51,7 +51,7 @@ class _CountrySelecionState extends State<CountrySelecion> {
             child: RadioListTile<SingingCharacter>(
               controlAffinity: ListTileControlAffinity.trailing,
               selectedTileColor:    Color(0xffEB5757),
-            title: const Text('Pakistan',style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w600)),
+            title: const Text('United Kingdom',style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w600)),
             value: SingingCharacter.jefferson,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
@@ -62,6 +62,7 @@ class _CountrySelecionState extends State<CountrySelecion> {
         ),
           ),
         Container(
+          height: 60,
             margin: EdgeInsets.only(left: 20,right: 20,top: 10),
            decoration: BoxDecoration(
               color: Color(0xff535353),
@@ -69,7 +70,7 @@ class _CountrySelecionState extends State<CountrySelecion> {
             ),
           child: RadioListTile<SingingCharacter>(
               controlAffinity: ListTileControlAffinity.trailing,
-            title: const Text('India',style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w600)),
+            title: const Text('United Kingdom',style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w600)),
             value: SingingCharacter.lafayette,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {

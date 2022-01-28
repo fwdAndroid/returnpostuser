@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ReferAFriend extends StatefulWidget {
   const ReferAFriend({ Key? key }) : super(key: key);
@@ -33,7 +34,9 @@ class _ReferAFriendState extends State<ReferAFriend> {
                   margin: EdgeInsets.only(left: 20, top: 10),
                   child: Text(
                     'Refer a friend and earn ',
-                    style: TextStyle(
+                    style: GoogleFonts.getFont(
+
+                      'Montserrat',
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         fontSize: 24),
@@ -44,19 +47,18 @@ class _ReferAFriendState extends State<ReferAFriend> {
            child: Image.asset('assets/five.png'),
          ),
            Container(
-                  margin: EdgeInsets.only(left: 20, top: 10),
+              width: 301,
+              height: 66,
+                  margin: EdgeInsets.only(left: 33, top: 20,right: 33),
                   child: Text(
                     'If you enjoy the app, refer your friends and receive a £ 0.50 reward!',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18),
+                    style: GoogleFonts.getFont('Montserrat',fontSize: 18,fontWeight:FontWeight.w600,color: Colors.white)
                   ),),  
                    Container(
-                  margin: EdgeInsets.only(left: 20, top: 10,right: 20),
+                  margin: EdgeInsets.only(left: 33, top: 10,right: 33),
                   child: Text(
                     'Share your love for Return Post with your bestie and unlock big bonuses. They ll no doubt fall for our Supadupa service. And your friend make their first order, you ll pocket £0.50 in your account balance! But hurry! This offer wont stick around.',
-                    style: TextStyle(
+                    style: GoogleFonts.getFont('Montserrat',
                         color: Color(0xff8D8989),
                         fontWeight: FontWeight.w600,
                         fontSize: 14),
@@ -64,7 +66,7 @@ class _ReferAFriendState extends State<ReferAFriend> {
                   ),),        
                    Container(
                       height: 60,
-                      margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+                       margin: EdgeInsets.only(left: 25, top: 20,right: 25),
 
                       //  padding: const EdgeInsets.all(3.0),
                       decoration: BoxDecoration(
@@ -74,6 +76,7 @@ class _ReferAFriendState extends State<ReferAFriend> {
                       // border: Border.all(color: Colors.grey,width: 0.5)
 
                       child: TextFormField(
+                        style: TextStyle(color: Colors.white),
                         //  textAlign: TextAlign.start,
                         decoration: InputDecoration(
                           hintText: '122455',
@@ -97,7 +100,7 @@ class _ReferAFriendState extends State<ReferAFriend> {
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                             primary: Color(0xffEB5757),
-                            minimumSize: Size(310, 60),
+                            minimumSize: Size(342, 60),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(23)),
                       ),

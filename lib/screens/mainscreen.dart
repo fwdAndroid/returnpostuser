@@ -51,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                currentTab == 0 ? Image.asset('assets/homered.png',height: 24,width: 24,) : Image.asset('assets/home.png',height: 18,width: 18,)
+                                currentTab == 0 ? Image.asset('assets/homered.png',height: 30,width: 30,) : Image.asset('assets/home.png',height: 30,width: 30,)
                                
                               ],
                             ),
@@ -69,7 +69,7 @@ class _MainScreenState extends State<MainScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                               currentTab == 1 ? Image.asset('assets/ordersred.png',height: 24,width: 24,) : Image.asset('assets/orderswhite.png',height: 18,width: 18,)
+                               currentTab == 1 ? Image.asset('assets/ordersred.png',height: 30,width: 30,) : Image.asset('assets/orderswhite.png',height: 30,width: 30,)
                                 
                               ],
                             ),
@@ -86,7 +86,7 @@ class _MainScreenState extends State<MainScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                               currentTab == 2 ? Image.asset('assets/chatred.png',height: 24,width: 24,) : Image.asset('assets/chatwhite.png',height: 18,width: 18,)
+                               currentTab == 2 ? Image.asset('assets/chatred.png',height: 30,width: 30,) : Image.asset('assets/chatwhite.png',height: 30,width: 30,)
                                
                               ],
                             ),

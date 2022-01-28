@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:returnpostcustomer/screens/payments/checkout.dart';
 
 class FinalPayment extends StatefulWidget {
@@ -39,17 +40,14 @@ class _FinalPaymentState extends State<FinalPayment> {
                 margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: Text(
                   'Payment',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600),
+                  style:  GoogleFonts.getFont('Montserrat',fontSize:24,fontWeight:FontWeight.w600,color: Colors.white)
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                margin: EdgeInsets.only(left: 20, right: 20, bottom: 20,top: 30),
                 decoration: BoxDecoration(
                   color: Color(0xffEB5757),
-                  borderRadius: new BorderRadius.circular(15),
+                  borderRadius: new BorderRadius.circular(20),
                 ),
                 child: RadioListTile<SingingCharacter>(
                   controlAffinity: ListTileControlAffinity.trailing,
@@ -76,10 +74,10 @@ class _FinalPaymentState extends State<FinalPayment> {
                 ),
               ),
              Container(
-                margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
                 decoration: BoxDecoration(
                   color: Color(0xff535353),
-                  borderRadius: new BorderRadius.circular(15),
+                  borderRadius: new BorderRadius.circular(20),
                 ),
                 child: RadioListTile<SingingCharacter>(
                   controlAffinity: ListTileControlAffinity.trailing,
@@ -108,10 +106,10 @@ class _FinalPaymentState extends State<FinalPayment> {
 
 
               Container(
-                margin: EdgeInsets.only(left: 20, right: 20, top: 10),
+                margin: EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
                   color: Color(0xff535353),
-                  borderRadius: new BorderRadius.circular(15),
+                  borderRadius: new BorderRadius.circular(20),
                 ),
                 child: RadioListTile<SingingCharacter>(
                   controlAffinity: ListTileControlAffinity.trailing,
@@ -138,10 +136,10 @@ class _FinalPaymentState extends State<FinalPayment> {
               ),
 
               Container(
-                margin: EdgeInsets.only(left: 20, right: 20, top: 10),
+                margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                 decoration: BoxDecoration(
                   color: Color(0xff535353),
-                  borderRadius: new BorderRadius.circular(15),
+                  borderRadius: new BorderRadius.circular(20),
                 ),
                 child: ListTile(
                   leading: Image.asset(
@@ -150,64 +148,62 @@ class _FinalPaymentState extends State<FinalPayment> {
                     width: 20,
                   ),
                   title: Text('Another payments',style: TextStyle(color: Colors.white,fontSize: 12,fontWeight:FontWeight.w600),),
-                  trailing: Icon(Icons.arrow_forward_ios,color: Color(0xff535353),),
+                  trailing: Icon(Icons.arrow_forward_ios,color: Color(0xff8D8989),),
                 )
               ),
 
               Container(
                 width: 237,
-                margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                 child: Text(
                   'Discount Code',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600),
+                  style:GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
                 ),
               ),
-              Container(
-                      height: 60,
-                      margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+              Center(
+                child: Container(
+                  width: 340,
+                        height: 60,
+                     //  margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
 
-                      //  padding: const EdgeInsets.all(3.0),
-                      decoration: BoxDecoration(
-                        color: Color(0xff535353),
-                        borderRadius: new BorderRadius.circular(20),
-                      ),
-                      // border: Border.all(color: Colors.grey,width: 0.5)
-
-                      child: TextFormField(
-                        //  textAlign: TextAlign.start,
-                        decoration: InputDecoration(
-                          hintText: '122455',
-                         
-                          contentPadding: EdgeInsets.only(top: 10, left: 20),
-                          border: InputBorder.none,
-                        
-                          fillColor: Colors.white,
-                          hintStyle: TextStyle(
-                            color: Colors.white, // <-- Change this
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.normal,
-                          ),
+                        //  padding: const EdgeInsets.all(3.0),
+                        decoration: BoxDecoration(
+                          color: Color(0xff535353),
+                          borderRadius: new BorderRadius.circular(20),
                         ),
-                      )),
+                        // border: Border.all(color: Colors.grey,width: 0.5)
+
+                        child: TextFormField(
+                          style: TextStyle(color: Colors.white),
+                          //  textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            hintText: '122455',
+                           
+                            contentPadding: EdgeInsets.only(top: 10, left: 20),
+                            border: InputBorder.none,
+                          
+                            fillColor: Colors.white,
+                            hintStyle: TextStyle(
+                              color: Colors.white, // <-- Change this
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FontStyle.normal,
+                            ),
+                          ),
+                        )),
+              ),
                        Container(
                 width: 237,
                 margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: Text(
                   'Notes A Courier',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600),
+                  style:GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
                 ),
               ),
                Container(
               margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
               height: 97,
-              width: 310,
+              width: 340,
               //  padding: const EdgeInsets.all(3.0),
               decoration: BoxDecoration(
                 color: Color(0xff535353),
@@ -216,6 +212,8 @@ class _FinalPaymentState extends State<FinalPayment> {
               // border: Border.all(color: Colors.grey,width: 0.5)
 
               child: TextFormField(
+                                          style: TextStyle(color: Colors.white),
+
                 //  textAlign: TextAlign.start,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 20,top: 20),
@@ -235,24 +233,18 @@ class _FinalPaymentState extends State<FinalPayment> {
                 children: [
                  Container(
             
-                margin: EdgeInsets.only(left: 15, top: 10),
+                margin: EdgeInsets.only(left: 25, top: 10),
                 child: Text(
                   'Total Price',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600),
+                  style: GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
                 ),
               ),
                Container(
             
-                margin: EdgeInsets.only(right: 15, top: 10),
+                margin: EdgeInsets.only(right: 25, top: 10),
                 child: Text(
                   '£ 2.99',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600),
+                  style: GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
                 ),
               ),
               ],),

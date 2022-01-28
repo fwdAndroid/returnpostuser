@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingScreenOne extends StatefulWidget {
   @override
@@ -9,48 +11,52 @@ class _OnboardingScreenOneState extends State<OnboardingScreenOne> {
   @override
   Widget build(BuildContext context) {
     //it will helps to return the size of the screen
-    return SafeArea(
+    Size size = MediaQuery.of(context).size;
+    return  SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff404040),
-        body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              TextButton(
+         backgroundColor: Color(0xff404040),
+         appBar: AppBar(
+           elevation: 0,
+           backgroundColor: Colors.transparent,
+           actions: [
+                          TextButton(
                   onPressed: () {},
                   child: Text(
                     'Skip',
-                    style: TextStyle(color: Color(0xff8D8989)),
+                    style: 
+                     GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w400, color: Color(0xff8D8989),fontSize: 16,fontStyle: FontStyle.normal)
+                   
                   ))
+           ],
+         ),
+         extendBody: true,
+        body:Column(
+            mainAxisAlignment:MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                    margin: EdgeInsets.only(left: 20,bottom: 40),
+                      child: Text(
+                        "We Return Parcels",
+                        style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 28,fontStyle: FontStyle.normal),),
+                    
+                  ),
+                   Container(
+              margin: EdgeInsets.symmetric(horizontal: 30,vertical: 15),
+            child: Image.asset('assets/shop.png',width: 320,height: 210,fit: BoxFit.cover,),),
+            Center(
+              child: Container(
+                 margin: EdgeInsets.only(top: 40),
+           width: 270,
+         //  margin: EdgeInsets.symmetric(vertical: 50,),
+           child: Text('We collect your parcel returns \n and process them at the carrier.', style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w400, color: Colors.white,fontSize: 16,fontStyle: FontStyle.normal),
+                        textAlign: TextAlign.center,),
+         ),
+            )   
             ],
           ),
-         Container(
-             margin: EdgeInsets.only(top: 70,left: 20),
-              child: Text(
-                'We Return Parcels',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 24),
-                    textAlign: TextAlign.start
-              ),
-            
-          ),
-          Container(
-              margin: EdgeInsets.symmetric(horizontal: 30,vertical: 20),
-            child: Image.asset('assets/shop.png'),),
-
-         Container(
-           width: 270,
-           margin: EdgeInsets.symmetric(vertical: 50,),
-           child: Text('We collect your parcel returns \n and process them at the carrier.', style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16),
-                      textAlign: TextAlign.center,),
-         )   
-        ]),
-      ),
+        ),
+      
     );
   }
 }

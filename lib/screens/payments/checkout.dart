@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:returnpostcustomer/screens/mainscreen.dart';
+import 'package:returnpostcustomer/screens/orders/ordertracking.dart';
 
 class Checkout extends StatefulWidget {
   const Checkout({ Key? key }) : super(key: key);
@@ -260,7 +261,7 @@ class _CheckoutState extends State<Checkout> {
                     ),
                     onPressed: () {
                        Navigator.push(context,
-                         MaterialPageRoute(builder: (context) => MainScreen()));
+                         MaterialPageRoute(builder: (context) => OrderTracking()));
                     },
                     child: Text(
                       'Order',

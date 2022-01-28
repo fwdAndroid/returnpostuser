@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:returnpostcustomer/screens/drawerscreens/frequently.dart';
 
 class Support extends StatefulWidget {
@@ -37,126 +38,118 @@ class _SupportState extends State<Support> {
                     fontSize: 20,
                     fontWeight: FontWeight.bold)),
           ),
-           Container(
-            margin: EdgeInsets.only(left: 30, right: 30,top: 20),
-            height: 60,
-            width: 310,
-            //  padding: const EdgeInsets.all(3.0),
-            decoration: BoxDecoration(
-              color: Color(0xff535353),
-              borderRadius: new BorderRadius.circular(20),
-            ),
-            // border: Border.all(color: Colors.grey,width: 0.5)
+             Container(
+                         margin: EdgeInsets.only(top:20,left: 23,right:23),
+                             padding: EdgeInsets.only(left: 10),
+                          height: 60,
+                          width: 380,
+                          //  padding: const EdgeInsets.all(3.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xff535353),
+                            borderRadius: new BorderRadius.circular(20),
+                          ),
+                          // border: Border.all(color: Colors.grey,width: 0.5)
 
-            child: ListTile(
-              onTap: (){
-               Navigator.push(context, MaterialPageRoute(builder: (builder) => FAQ()));
-              },
-              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-              shape: CircleBorder(),
-              leading: Text(
-                'FAQ’s',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600),
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xff8D8989),
-              ),
-            ),
-          ),
+                          child: ListTile(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => FAQ()));
+                            },
+                            contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                            shape: CircleBorder(),
+                            leading: Text(
+                              'FAQ’s',
+                              style :GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xff8D8989),
+                            ),
+                          ),
+                        ),
           Container(
-            margin: EdgeInsets.only(left: 30, right: 30,top: 20),
-            height: 60,
-            width: 310,
-            //  padding: const EdgeInsets.all(3.0),
-            decoration: BoxDecoration(
-              color: Color(0xff535353),
-              borderRadius: new BorderRadius.circular(20),
-            ),
-            // border: Border.all(color: Colors.grey,width: 0.5)
+                         margin: EdgeInsets.only(top:20,left: 23,right:23),
+                             padding: EdgeInsets.only(left: 10),
+                          height: 60,
+                          width: 380,
+                          //  padding: const EdgeInsets.all(3.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xff535353),
+                            borderRadius: new BorderRadius.circular(20),
+                          ),
+                          // border: Border.all(color: Colors.grey,width: 0.5)
 
-            child: ListTile(
-              onTap: (){
-              },
-              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-              shape: CircleBorder(),
-              leading: Text(
-                'Report Problems',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600),
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xff8D8989),
-              ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 30,top: 20),
-            height: 60,
-            width: 310,
-            //  padding: const EdgeInsets.all(3.0),
-            decoration: BoxDecoration(
-              color: Color(0xff535353),
-              borderRadius: new BorderRadius.circular(20),
-            ),
-            // border: Border.all(color: Colors.grey,width: 0.5)
+                          child: ListTile(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => FAQ()));
+                            },
+                            contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                            shape: CircleBorder(),
+                            leading: Text(
+                              'Report problems',
+                              style :GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xff8D8989),
+                            ),
+                          ),
+                        ),
+              Container(
+                         margin: EdgeInsets.only(top:20,left: 23,right:23),
+                             padding: EdgeInsets.only(left: 10),
+                          height: 60,
+                          width: 380,
+                          //  padding: const EdgeInsets.all(3.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xff535353),
+                            borderRadius: new BorderRadius.circular(20),
+                          ),
+                          // border: Border.all(color: Colors.grey,width: 0.5)
 
-            child: ListTile(
-              onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (builder) => LanguageSelection()));
-              },
-              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-              shape: CircleBorder(),
-              leading: Text(
-                'Terms & Condition',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600),
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xff8D8989),
-              ),
-            ),
-          ),
+                          child: ListTile(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => FAQ()));
+                            },
+                            contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                            shape: CircleBorder(),
+                            leading: Text(
+                              'Teams & Conditions',
+                              style :GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xff8D8989),
+                            ),
+                          ),
+                        ),
+        Container(
+                         margin: EdgeInsets.only(top:20,left: 23,right:23),
+                             padding: EdgeInsets.only(left: 10),
+                          height: 60,
+                          width: 380,
+                          //  padding: const EdgeInsets.all(3.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xff535353),
+                            borderRadius: new BorderRadius.circular(20),
+                          ),
+                          // border: Border.all(color: Colors.grey,width: 0.5)
 
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 30,top: 20),
-            height: 60,
-            width: 310,
-            //  padding: const EdgeInsets.all(3.0),
-            decoration: BoxDecoration(
-              color: Color(0xff535353),
-              borderRadius: new BorderRadius.circular(20),
-            ),
-            // border: Border.all(color: Colors.grey,width: 0.5)
-
-            child: ListTile(
-              onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (builder) => LanguageSelection()));
-              },
-              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-              shape: CircleBorder(),
-              leading: Text(
-                'Feedbacks',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600),
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: Color(0xff8D8989),
-              ),
-            ),
-          ),
+                          child: ListTile(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => FAQ()));
+                            },
+                            contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                            shape: CircleBorder(),
+                            leading: Text(
+                              'Feedbacks',
+                              style :GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xff8D8989),
+                            ),
+                          ),
+                        ),
     ],),
     );
   }
