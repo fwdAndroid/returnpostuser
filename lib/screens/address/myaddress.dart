@@ -60,36 +60,31 @@ class _MyAddressState extends State<MyAddress> {
                     fontSize: 12),
               ),
             ),
-            Center(
-              child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  height: 55,
-                  width: 320,
-                  //  padding: const EdgeInsets.all(3.0),
-                  decoration: BoxDecoration(
-                    color: Color(0xff535353),
-                    borderRadius: new BorderRadius.circular(15),
-                  ),
-                  // border: Border.all(color: Colors.grey,width: 0.5)
+            Container(
+                    height: 60,
+                    margin: EdgeInsets.only(left: 30,right: 30,top: 10),
 
-                  child: TextFormField(
-                                      style: TextStyle(color: Colors.white),
- 
-                    //  textAlign: TextAlign.start,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(left: 20),
-                      hintText: 'Home Job',
-                      border: InputBorder.none,
-                      fillColor: Colors.white,
-                      hintStyle: TextStyle(
-                        color: Color(0xff8D8989), // <-- Change this
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        fontStyle: FontStyle.normal,
-                      ),
+                    //  padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xff535353),
+                      borderRadius: new BorderRadius.circular(20),
                     ),
-                  )),
-            ),
+                    // border: Border.all(color: Colors.grey,width: 0.5)
+
+                    child: TextFormField(
+                      //  textAlign: TextAlign.start,
+                      decoration: InputDecoration(
+                        
+                        hintText: 'Home Job',
+                        contentPadding: EdgeInsets.only(top: 10, left: 20),
+                        border: InputBorder.none,
+                     
+                        
+                        labelStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                        hintStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Color(0xff8D8989),fontSize: 12,fontStyle: FontStyle.normal),
+                      ),
+                    )),
+           
             Container(
               margin: EdgeInsets.only(left: 30, top: 10),
               width: 211,
@@ -101,11 +96,11 @@ class _MyAddressState extends State<MyAddress> {
                     fontSize: 12),
               ),
             ),
-            Center(
-              child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            Container(
+                                     margin: EdgeInsets.only(left: 30,right: 30,top: 10),
+
                   height: 97,
-                  width: 320,
+                  width: 343,
                   //  padding: const EdgeInsets.all(3.0),
                   decoration: BoxDecoration(
                     color: Color(0xff535353),
@@ -129,7 +124,7 @@ class _MyAddressState extends State<MyAddress> {
                         fontStyle: FontStyle.normal,
                       ),
                     ),
-                  )),
+                  )
             ),
                  Container(
               margin: EdgeInsets.only(left: 30, top: 10),
@@ -142,11 +137,10 @@ class _MyAddressState extends State<MyAddress> {
                     fontSize: 12),
               ),
             ),
-            Center(
-              child: Container(
-                   margin: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+            Container(
+                    margin: EdgeInsets.only(left: 30,right: 30,top: 10),
                   height: 55,
-                 width: 320,
+                 width: 340,
                   //  padding: const EdgeInsets.all(3.0),
                   decoration: BoxDecoration(
                     color: Color(0xff535353),
@@ -171,31 +165,37 @@ class _MyAddressState extends State<MyAddress> {
                       ),
                     ),
                   )),
-            ),
-                    Center(
-                      child: Container(
-                        margin: EdgeInsets.all(20),
-                        child: Center(
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: Color(0xffEB5757),
-                              minimumSize: Size(340, 60),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15)),
-                          ),
-                          onPressed: () {
-                              //  Navigator.push(context,
-                              //    MaterialPageRoute(builder: (context) => Signinpage()));
-                          },
-                          child: Text(
-                              'Add My Address',
-                              style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600,fontSize: 18,color: Colors.white),
+            
+                    // Center(
+                    //   child: Container(
+                    //     margin: EdgeInsets.all(20),
+                    //     child: Center(
+                        Center(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 33, right:  33,top: 20,bottom: 20),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Color(0xffEB5757),
+                                    fixedSize: Size(310, 60),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(24)),
+                                ),
+                                onPressed: () {
+                                    //  Navigator.push(context,
+                                    //    MaterialPageRoute(builder: (context) => Signinpage()));
+                                },
+                                child: Text(
+                                    'Add My Address',
+                                    style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600,fontSize: 18,color: Colors.white),
+                                ),
+                            ),
                           ),
                         ),
+                         
                   
-                           ),
-                      ),
-                    ),
+                    //        ),
+                    //   ),
+                    // ),
           ],
         ),
       ),

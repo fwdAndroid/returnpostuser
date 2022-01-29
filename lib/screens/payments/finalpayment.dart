@@ -160,9 +160,9 @@ class _FinalPaymentState extends State<FinalPayment> {
                   style:GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
                 ),
               ),
-              Center(
-                child: Container(
-                  width: 340,
+              Container(
+                   margin: EdgeInsets.only(left: 20, right: 20),
+                  width: 365,
                         height: 60,
                      //  margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
 
@@ -191,7 +191,7 @@ class _FinalPaymentState extends State<FinalPayment> {
                             ),
                           ),
                         )),
-              ),
+              
                        Container(
                 width: 237,
                 margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
@@ -201,9 +201,9 @@ class _FinalPaymentState extends State<FinalPayment> {
                 ),
               ),
                Container(
-              margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+               margin: EdgeInsets.only(left: 20, right: 20),
               height: 97,
-              width: 340,
+              width: 365,
               //  padding: const EdgeInsets.all(3.0),
               decoration: BoxDecoration(
                 color: Color(0xff535353),
@@ -228,26 +228,29 @@ class _FinalPaymentState extends State<FinalPayment> {
                   ),
                 ),
               )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                   Container(
+            
+                  margin: EdgeInsets.only(left: 25, top: 10),
+                  child: Text(
+                    'Total Price',
+                    style: GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
+                  ),
+                ),
                  Container(
             
-                margin: EdgeInsets.only(left: 25, top: 10),
-                child: Text(
-                  'Total Price',
-                  style: GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
+                  margin: EdgeInsets.only(right: 25, top: 10),
+                  child: Text(
+                    '£ 2.99',
+                    style: GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
+                  ),
                 ),
+                ],),
               ),
-               Container(
-            
-                margin: EdgeInsets.only(right: 25, top: 10),
-                child: Text(
-                  '£ 2.99',
-                  style: GoogleFonts.getFont('Montserrat',fontSize:18,fontWeight:FontWeight.w600,color: Colors.white)
-                ),
-              ),
-              ],),
 
               Center(
                 child: Container(

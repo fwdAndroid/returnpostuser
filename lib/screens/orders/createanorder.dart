@@ -60,36 +60,31 @@ class _CreateAnOrderState extends State<CreateAnOrder> {
                 style: TextStyle(fontSize: 10, color: Color(0xff8D8989)),
               ),
             ),
-            Center(
-              child: Container(
-                margin: EdgeInsets.only(left: 10, right: 10, top: 10),
-                height: 60,
-                width: 340,
-                //  padding: const EdgeInsets.all(3.0),
-                decoration: BoxDecoration(
-                  color: Color(0xff535353),
-                  borderRadius: new BorderRadius.circular(15),
-                ),
-                // border: Border.all(color: Colors.grey,width: 0.5)
+            Container(
+                    height: 60,
+                    margin: EdgeInsets.only(left: 20,right: 20,top: 10),
 
-                child: TextFormField(
-                                  style: TextStyle(color: Colors.white),
-
-                  //  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    hintText: 'Name',
-                    contentPadding: EdgeInsets.only(top: 10, left: 30, right: 30),
-                    border: InputBorder.none,
-                    fillColor: Colors.white,
-                    hintStyle: TextStyle(
-                      color: Color(0xff8D8989), // <-- Change this
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
+                    //  padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xff535353),
+                      borderRadius: new BorderRadius.circular(20),
                     ),
-                  ),
-                ),
-              ),
-            ),
+                    // border: Border.all(color: Colors.grey,width: 0.5)
+
+                    child: TextFormField(
+                      //  textAlign: TextAlign.start,
+                      decoration: InputDecoration(
+                        
+                        hintText: 'Name',
+                        contentPadding: EdgeInsets.only(top: 10, left: 20),
+                        border: InputBorder.none,
+                     
+                        
+                        labelStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                        hintStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Color(0xff8D8989),fontSize: 12,fontStyle: FontStyle.normal),
+                      ),
+                    )),
+           
             Container(
               margin: EdgeInsets.only(left: 30, right: 30, top: 30),
               child: Text(
@@ -97,43 +92,33 @@ class _CreateAnOrderState extends State<CreateAnOrder> {
                 style: TextStyle(fontSize: 10, color: Color(0xff8D8989)),
               ),
             ),
-            Center(
-              child: Container(
-                  margin: EdgeInsets.only(left: 10, right: 10, top: 10),
-                height: 60,
-                width: 340,
-                //  padding: const EdgeInsets.all(3.0),
-                decoration: BoxDecoration(
-                  color: Color(0xff535353),
-                  borderRadius: new BorderRadius.circular(15),
-                ),
-                // border: Border.all(color: Colors.grey,width: 0.5)
+            Container(
+                    height: 60,
+                    margin: EdgeInsets.only(left: 20,right: 20,top: 10),
 
-                child: TextFormField(
-                                  style: TextStyle(color: Colors.white),
+                    //  padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xff535353),
+                      borderRadius: new BorderRadius.circular(20),
+                    ),
+                    // border: Border.all(color: Colors.grey,width: 0.5)
 
-                  //  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(top: 20.0, right: 20),
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Color(0xff8D8989),
+                    child: TextFormField(
+                      //  textAlign: TextAlign.start,
+                      decoration: InputDecoration(
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.only(top:20.0),
+                          child: Icon(Icons.arrow_forward_ios,color: Color(0xff8D8989),),
+                        ),
+                        hintText: 'Choose categories',
+                        contentPadding: EdgeInsets.only(top: 20, left: 20),
+                        border: InputBorder.none,
+                     
+                        
+                        labelStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                        hintStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Color(0xff8D8989),fontSize: 12,fontStyle: FontStyle.normal),
                       ),
-                    ),
-                    hintText: 'Choose categories',
-                    contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
-                    border: InputBorder.none,
-                    fillColor: Colors.white,
-                    hintStyle: TextStyle(
-                      color: Color(0xff8D8989), // <-- Change this
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                    )),
             Container(
               margin: EdgeInsets.only(left: 30, right: 30, top: 15),
               child: Text(
@@ -141,44 +126,33 @@ class _CreateAnOrderState extends State<CreateAnOrder> {
                 style: TextStyle(fontSize: 10, color: Color(0xff8D8989)),
               ),
             ),
-            Center(
-              child: Container(
-                               margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+            Container(
+                    height: 60,
+                    margin: EdgeInsets.only(left: 20,right: 20,top: 10),
 
-                height: 60,
-                width: 340,
-                //  padding: const EdgeInsets.all(3.0),
-                decoration: BoxDecoration(
-                  color: Color(0xff535353),
-                  borderRadius: new BorderRadius.circular(15),
-                ),
-                // border: Border.all(color: Colors.grey,width: 0.5)
+                    //  padding: const EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xff535353),
+                      borderRadius: new BorderRadius.circular(20),
+                    ),
+                    // border: Border.all(color: Colors.grey,width: 0.5)
 
-                child: TextFormField(
-                                  style: TextStyle(color: Colors.white),
-
-                  //  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(top: 20.0, right: 20),
-                      child: Icon(
-                        Icons.date_range,
-                        color: Color(0xff8D8989),
+                    child: TextFormField(
+                      //  textAlign: TextAlign.start,
+                      decoration: InputDecoration(
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.only(top:20.0),
+                          child: Icon(Icons.date_range,color: Color(0xff8D8989),),
+                        ),
+                        hintText: '02.04.2021',
+                        contentPadding: EdgeInsets.only(top: 20, left: 20),
+                        border: InputBorder.none,
+                     
+                        
+                        labelStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 12,fontStyle: FontStyle.normal),
+                        hintStyle:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Color(0xff8D8989),fontSize: 12,fontStyle: FontStyle.normal),
                       ),
-                    ),
-                    hintText: '12/21/2143',
-                    contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
-                    border: InputBorder.none,
-                    fillColor: Colors.white,
-                    hintStyle: TextStyle(
-                      color: Color(0xff8D8989), // <-- Change this
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                    )),
             Container(
               margin: EdgeInsets.only(left: 30, right: 30, top: 15),
               child: Text(
@@ -186,9 +160,8 @@ class _CreateAnOrderState extends State<CreateAnOrder> {
                 style: TextStyle(fontSize: 10, color: Color(0xff8D8989)),
               ),
             ),
-            Center(
-              child: Container(
-                             margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+           Container(
+                     margin: EdgeInsets.only(left: 20,right: 20,top: 10),
 
                 height: 70,
                 width: 340,
@@ -221,7 +194,7 @@ class _CreateAnOrderState extends State<CreateAnOrder> {
                     ),
                   ),
                 ),
-              ),
+            
             ),
              Container(
                margin: EdgeInsets.only(top: 30,bottom: 20),
