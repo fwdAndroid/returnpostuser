@@ -27,7 +27,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
         actions: [
           InkWell(
             onTap: () {},
-            child: Image.asset('assets/search.png'),
+            child: Image.asset('assets/search.png',height: 40, width: 40,),
           )
         ],
       ),
@@ -52,7 +52,10 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                     fontWeight: FontWeight.bold)),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+             margin: EdgeInsets.symmetric(horizontal: 15),
+              width: MediaQuery.of(context).size.width,
+              height: 110,
+          
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0),
@@ -77,7 +80,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                       Container(
                         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
                         child: Text(
-                          '£ 151.14',
+                          '£ 2.99',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               color: Colors.white,

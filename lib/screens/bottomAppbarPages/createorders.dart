@@ -144,7 +144,7 @@ class _CreateOrdersState extends State<CreateOrders> {
               backgroundColor: Color(0xffEB5757),
               title: Center(
                   child: Container(
-                      width: 188,
+                      width: 250,
                       height: 58,
                       child: const Text(
                         'Add \n  other retailer',
@@ -152,11 +152,11 @@ class _CreateOrdersState extends State<CreateOrders> {
                         textAlign: TextAlign.center,
                       ))),
               content: Container(
-                height: 180,
+                height: 220,
                 child: Column(
                   children: [
                     Container(
-                      height: 60,
+                      height: 55,
                       margin: EdgeInsets.only(top: 3, right: 20, left: 20),
 
                       //  padding: const EdgeInsets.all(3.0),
@@ -174,7 +174,7 @@ class _CreateOrdersState extends State<CreateOrders> {
                         //  textAlign: TextAlign.start,
                         decoration: InputDecoration(
                           hintText: 'Enter new number',
-                          contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                          contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 20),
                           border: InputBorder.none,
                           fillColor: Colors.white,
                           // suffixIcon: Icon(Icons.remove_red_eye),
@@ -199,11 +199,11 @@ class _CreateOrdersState extends State<CreateOrders> {
                         ),
                         child: Text(
                           'Enter the name of your retailer if it is \n not on the list of retailers',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white,fontSize: 12),
                           textAlign: TextAlign.center,
                         )),
                     Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: EdgeInsets.only(top: 30),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: Colors.white,

@@ -23,7 +23,7 @@ class _OrdersState extends State<Orders> {
           child:
               InkWell(onTap: () {
                 Navigator.pop(context);
-              }, child: Image.asset('assets/back.png')),
+              }, child: Image.asset('assets/back.png',height: 100,width: 50,)),
         ),
         actions: [
           InkWell(
