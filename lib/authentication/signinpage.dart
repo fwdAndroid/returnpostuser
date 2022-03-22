@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:returnpostcustomer/authentication/passwords/forgotpassword.dart';
 import 'package:returnpostcustomer/authentication/signuppage.dart';
+import 'package:returnpostcustomer/database/auth_method.dart';
 import 'package:returnpostcustomer/screens/mainscreen.dart';
 
 
@@ -14,6 +15,17 @@ class Signinpage extends StatefulWidget {
 }
 
 class _SigninpageState extends State<Signinpage> {
+  TextEditingController controllerP = TextEditingController();
+    TextEditingController controllerPass = TextEditingController();
+bool _isLoading = false;
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    controllerP.clear();
+    controllerPass.clear();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,10 +59,11 @@ class _SigninpageState extends State<Signinpage> {
                     // border: Border.all(color: Colors.grey,width: 0.5)
 
                     child: TextFormField(
+                      controller: controllerP,
                       //  textAlign: TextAlign.start,
                       decoration: InputDecoration(
                         
-                        hintText: ' Phone number',
+                        hintText: ' Email',
                         contentPadding: EdgeInsets.only(top: 10, left: 20),
                         border: InputBorder.none,
                      
@@ -71,6 +84,7 @@ class _SigninpageState extends State<Signinpage> {
                     // border: Border.all(color: Colors.grey,width: 0.5)
 
                     child: TextFormField(
+                      controller: controllerPass,
                       obscureText: true,
                       //  textAlign: TextAlign.start,
                       decoration: InputDecoration(
@@ -116,11 +130,10 @@ class _SigninpageState extends State<Signinpage> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24)),
               ),
-              onPressed: () {
-                 Navigator.push(context,
-                   MaterialPageRoute(builder: (context) => MainScreen()));
-              },
-              child: Text(
+              onPressed:loginUser,
+              child:_isLoading ? Center(
+                child: CircularProgressIndicator(),
+              ) :  Text(
                 
                 'Sign In',
                 style: GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 15,fontStyle: FontStyle.normal),
@@ -145,6 +158,36 @@ class _SigninpageState extends State<Signinpage> {
                       )))),
         ],
       ),
+      
     );
   }
+  void loginUser() async{
+    setState(() {
+      _isLoading = true;
+    });
+    String rse = await AuthMethods().loginUpUser(
+        email: controllerP.text,
+        pass: controllerPass.text,
+      );
+
+    print(rse);
+    setState(() {
+      _isLoading = false;
+    });
+    if(rse == 'sucess'){
+      print('success');
+     Navigator.push(context, MaterialPageRoute(builder: (builder) => Signinpage()));
+    }
+    else{
+      showSnakBar(rse, context);
+    }
+     
+  }
+  
+/// SnakBar Code
+showSnakBar(String contexts,BuildContext context){
+ ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(contexts)));
+  
+}
+
 }

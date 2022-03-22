@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "951669446538",
+    "project_id": "returnpost-ce224",
+    "storage_bucket": "returnpost-ce224.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951669446538:android:a8d1fdc3d39fe02fa89a73",
+        "android_client_info": {
+          "package_name": "com.example.returnpostcustomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "951669446538-o617cdq6c06tqvqqli17hsroe2mkm8b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOP2qK0pa4fyurinshaVq6lnQlI562xAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "951669446538-o617cdq6c06tqvqqli17hsroe2mkm8b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

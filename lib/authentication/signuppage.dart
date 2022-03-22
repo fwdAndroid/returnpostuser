@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:returnpostcustomer/authentication/signinpage.dart';
+import 'package:returnpostcustomer/database/auth_method.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -10,6 +11,27 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  TextEditingController emailController = TextEditingController();
+    TextEditingController passController = TextEditingController();
+
+  TextEditingController phoneController = TextEditingController();
+
+  TextEditingController referralCodeController = TextEditingController();
+
+
+  //Looding Variable
+  bool _isLoading = false;
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    emailController.clear();
+    passController.clear();
+    phoneController.clear();
+    referralCodeController.clear();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,10 +68,11 @@ class _SignUpPageState extends State<SignUpPage> {
                     // border: Border.all(color: Colors.grey,width: 0.5)
 
                     child: TextFormField(
+                      controller: emailController,
                       //  textAlign: TextAlign.start,
                       decoration: InputDecoration(
                         
-                        hintText: 'Name',
+                        hintText: 'email',
                         contentPadding: EdgeInsets.only(top: 10, left: 20),
                         border: InputBorder.none,
                      
@@ -59,6 +82,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     )),
                  Container(
+                   
                     height: 60,
                     margin: EdgeInsets.only(left: 30,right: 30,top: 25),
 
@@ -70,6 +94,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     // border: Border.all(color: Colors.grey,width: 0.5)
 
                     child: TextFormField(
+                      controller: phoneController,
                       //  textAlign: TextAlign.start,
                       decoration: InputDecoration(
                         
@@ -83,6 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     )),
               Container(
+
                     height: 60,
                     margin: EdgeInsets.only(left: 30,right: 30,top: 25),
 
@@ -94,7 +120,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     // border: Border.all(color: Colors.grey,width: 0.5)
 
                     child: TextFormField(
-                      
+                      controller: passController,
                       obscureText: true,
                       //  textAlign: TextAlign.start,
                       decoration: InputDecoration(
@@ -113,6 +139,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     )),
                   Container(
+                    
                     height: 60,
                     margin: EdgeInsets.only(left: 30,right: 30,top: 25),
 
@@ -124,7 +151,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     // border: Border.all(color: Colors.grey,width: 0.5)
 
                     child: TextFormField(
-                      
+                      controller: referralCodeController,
                      
                       //  textAlign: TextAlign.start,
                       decoration: InputDecoration(
@@ -150,11 +177,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(23)),
               ),
-              onPressed: () {
-                //  Navigator.push(context,
-                //    MaterialPageRoute(builder: (context) => PrivacyPolicy()));
-              },
-              child: Text(
+              onPressed:  signUpUsers,
+              child: _isLoading ? Center(
+                child: CircularProgressIndicator(),
+              )  : Text(
                 'Verify My Phone',
                 style:  GoogleFonts.getFont('Montserrat',fontWeight: FontWeight.w600, color: Colors.white,fontSize: 15,fontStyle: FontStyle.normal),
               ),
@@ -179,4 +205,33 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
   }
-}
+
+   ///Register Users
+  signUpUsers() async {
+    setState(() {
+      _isLoading = true;
+    });
+    String rse = await AuthMethods().signUpUser(
+        phonenumber: phoneController.text,
+        password: passController.text,
+        email: emailController.text,
+        referalCode: referralCodeController.text,
+       );
+
+    print(rse);
+    setState(() {
+      _isLoading = false;
+    });
+    if (rse != 'sucess') {
+      showSnakBar(rse, context);
+    } else {
+      MaterialPageRoute(
+          builder: (builder) => Signinpage());
+    }
+  }
+
+
+/// SnakBar Code
+showSnakBar(String contexts,BuildContext context){
+ ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(contexts)));
+}}
