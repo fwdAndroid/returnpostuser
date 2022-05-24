@@ -9,26 +9,43 @@ import 'package:returnpostcustomer/services/database_services.dart';
 import 'package:returnpostcustomer/utils/utils.dart';
 
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class VehicleSettings extends StatefulWidget {
+  const VehicleSettings({Key? key}) : super(key: key);
 
   @override
-  _SignUpPageState createState() => _SignUpPageState();
+  _VehicleSettingsState createState() => _VehicleSettingsState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _VehicleSettingsState extends State<VehicleSettings> {
   final TextEditingController _usernameController = TextEditingController();
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _refreralController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
+  final TextEditingController _addNameController = TextEditingController();
+  final TextEditingController _addTypeController = TextEditingController();
+  final TextEditingController _addRegController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
   Uint8List? _image;
 
   bool _isLoading = false;
+  saveInfo() async {
+    String res = await DataBaseMethods().addVecihleInfo(
+                vechileName: _addNameController.text,
+                vechileType: _addTypeController.text,
+                vechilRegistration: _addRegController.text,
+              );
+              print(_addNameController.text);
+              print(_addTypeController.text);
+              print( _addRegController.text);
+
+
+              print(res);
+    
+  }
 
   _selectImage() {
     return showDialog(
@@ -157,7 +174,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   width: double.infinity,
                   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                   child: Text(
-                    'Create an account',
+                    'Add Vahicle Info',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.getFont(
                       'Montserrat',
@@ -166,40 +183,6 @@ class _SignUpPageState extends State<SignUpPage> {
                       fontSize: 32,
                       fontStyle: FontStyle.normal,
                     ),
-                  ),
-                ),
-                Center(
-                  child: Stack(
-                    children: [
-                      _image != null
-                          ? CircleAvatar(
-                              radius: 62,
-                              child: CircleAvatar(
-                                radius: 60,
-                                backgroundImage: MemoryImage(_image!),
-                              ),
-                            )
-                          : CircleAvatar(
-                              radius: 60,
-                              backgroundImage: AssetImage(
-                                'assets/person.png',
-                              ),
-                            ),
-                      Positioned(
-                        bottom: -5,
-                        left: 80,
-                        child: IconButton(
-                          onPressed: () {
-                            _selectImage();
-                          },
-                          icon: const Icon(
-                            Icons.add_a_photo,
-                            size: 25,
-                            color: Colors.white,
-                          ),
-                        ),
-                      )
-                    ],
                   ),
                 ),
                 Container(
@@ -215,16 +198,10 @@ class _SignUpPageState extends State<SignUpPage> {
 
                     child: TextFormField(
                       //  textAlign: TextAlign.start,
-                      controller: _usernameController,
-                      validator: (v) {
-                        if (v!.isEmpty) {
-                          return " Please Enter username..  ";
-                        }
+                      controller: _addNameController,
 
-                        return null;
-                      },
                       decoration: InputDecoration(
-                        hintText: 'Name...',
+                        hintText: 'Name of Vehcile...',
                         contentPadding: EdgeInsets.only(top: 10, left: 20),
                         border: InputBorder.none,
                         labelStyle: GoogleFonts.getFont('Montserrat',
@@ -252,62 +229,11 @@ class _SignUpPageState extends State<SignUpPage> {
 
                     child: TextFormField(
                       //  textAlign: TextAlign.start,
-                      controller: _emailController,
-                      validator: (v) {
-                        if (v!.isEmpty || !v.contains("@")) {
-                          return " Enter valid email ";
-                        }
+                      controller: _addTypeController,
 
-                        return null;
-                      },
                       decoration: InputDecoration(
-                        hintText: ' email...',
+                        hintText: 'Enter type of vehcile...',
                         contentPadding: EdgeInsets.only(top: 10, left: 20),
-                        border: InputBorder.none,
-                        labelStyle: GoogleFonts.getFont('Montserrat',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontStyle: FontStyle.normal),
-                        hintStyle: GoogleFonts.getFont('Montserrat',
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xff8D8989),
-                            fontSize: 12,
-                            fontStyle: FontStyle.normal),
-                      ),
-                    )),
-                Container(
-                    height: 60,
-                    margin: EdgeInsets.only(left: 30, right: 30, top: 25),
-
-                    //  padding: const EdgeInsets.all(3.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xff535353),
-                      borderRadius: new BorderRadius.circular(20),
-                    ),
-                    // border: Border.all(color: Colors.grey,width: 0.5)
-
-                    child: TextFormField(
-                      controller: _passwordController,
-                      validator: (v) {
-                        if (v!.isEmpty) {
-                          return " Please Enter password..  ";
-                        }
-
-                        return null;
-                      },
-                      obscureText: true,
-                      //  textAlign: TextAlign.start,
-                      decoration: InputDecoration(
-                        suffixIcon: Padding(
-                          padding: const EdgeInsets.only(top: 20.0),
-                          child: Icon(
-                            Icons.visibility_off,
-                            color: Color(0xff8D8989),
-                          ),
-                        ),
-                        hintText: ' Password',
-                        contentPadding: EdgeInsets.only(top: 20, left: 20),
                         border: InputBorder.none,
                         labelStyle: GoogleFonts.getFont('Montserrat',
                             fontWeight: FontWeight.w600,
@@ -333,48 +259,19 @@ class _SignUpPageState extends State<SignUpPage> {
                   // border: Border.all(color: Colors.grey,width: 0.5)
 
                   child: TextFormField(
+                    controller: _addRegController,
                     //  textAlign: TextAlign.start,
-                    controller: _refreralController,
                     decoration: InputDecoration(
-                      hintText: 'Referal Code(optional)',
-                      contentPadding: EdgeInsets.only(top: 15, left: 20),
+                      hintText: ' Registration #',
+                      contentPadding: EdgeInsets.only(top: 20, left: 20),
                       border: InputBorder.none,
-                      labelStyle: GoogleFonts.getFont('Montserrat',
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontStyle: FontStyle.normal),
-                      hintStyle: GoogleFonts.getFont('Montserrat',
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff8D8989),
-                          fontSize: 12,
-                          fontStyle: FontStyle.normal),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 60,
-                  margin: EdgeInsets.only(left: 30, right: 30, top: 33),
-
-                  //  padding: const EdgeInsets.all(3.0),
-                  decoration: BoxDecoration(
-                    color: Color(0xff535353),
-                    borderRadius: new BorderRadius.circular(20),
-                  ),
-                  // border: Border.all(color: Colors.grey,width: 0.5)
-
-                  child: TextFormField(
-                    //  textAlign: TextAlign.start,
-                    controller: _addressController,
-                    decoration: InputDecoration(
-                      hintText: 'Address...',
-                      contentPadding: const EdgeInsets.only(top: 10, left: 20),
-                      border: InputBorder.none,
-                      labelStyle: GoogleFonts.getFont('Montserrat',
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontStyle: FontStyle.normal),
+                      labelStyle: GoogleFonts.getFont(
+                        'Montserrat',
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontStyle: FontStyle.normal,
+                      ),
                       hintStyle: GoogleFonts.getFont(
                         'Montserrat',
                         fontWeight: FontWeight.w600,
@@ -386,7 +283,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
                 Center(
                   child: ElevatedButton(
@@ -396,7 +293,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(23)),
                     ),
-                    onPressed: signUpUser,
+                    onPressed: saveInfo,
                     //  () {
                     //   print('this is name controller $_usernameController');
 
@@ -412,7 +309,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     //   //     MaterialPageRoute(builder: (context) => PrivacyPolicy()));
                     // },
                     child: Text(
-                      'SignUp',
+                      'Upload Data',
                       style: GoogleFonts.getFont('Montserrat',
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
